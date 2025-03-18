@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Game {
     private Level levelOne;
     private Level levelTwo;
@@ -57,7 +59,14 @@ public class Game {
      * described in part (b)
      * Precondition: num > 0
      */
-    public int playManyTimes(int num)
-    { /* to be implemented in part (b) */ }
-// There may be instance variables, constructors, and methods that are not shown.
+    public int playManyTimes(int num) {
+        int max = 0;
+        while(num>0) {
+            play();
+            int score = getScore();
+            if (score > max) max = score;
+            num--;
+        }
+        return max;
+    }
 }
